@@ -16,35 +16,76 @@
   </head>
 
   <body>
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-6">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-primary">
-              <div class="content">
-                <p class="title">Παρτίδα</p>
-                <div class="content">
-                  <!-- Content -->
-                  <%= yield %>
-                </div>
+    <section class="hero is-fullheight is-default is-bold">
+      <div class="hero-head">
+          <nav class="navbar">
+              <div class="container">
+                  <div class="navbar-brand">
+                      <a class="navbar-item" href="../">
+                          <img src="deltachess-logo.png" alt="Logo"><span style="font-family:Pacifico;">&nbsp;DeltaChess</span>
+                      </a>
+                      <span class="navbar-burger burger" data-target="navbarMenu">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </span>
+                  </div>
+                  <div id="navbarMenu" class="navbar-menu">
+                      <div class="navbar-end">
+                          <div class="tabs is-right">
+                              <ul>
+                                  <li class="is-active"><a>Home</a></li>
+                                  <li><a href="">Examples</a></li>
+                                  <li><a href="">Features</a></li>
+                                  <li><a href="">Team</a></li>
+                                  <li><a href="">Help</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </article>
-          </div>
-        </div>
+          </nav>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <div class="content">
-            <p class="title">Ιστορικό</p>
-            <p class="subtitle">FEN:</p>
-            <div class="content">
-              <!-- Content -->
-              <div id="move"></div>
-            </div>
+      <div class="hero-body">
+          <div class="container">
+              <div class="columns">
+                  <div class="column is-5">
+                    <%= yield %>
+                  </div>
+                  <div class="column is-6 is-offset-1">
+                      <p class="is-2">
+                          <strong>Ιστορικό (FEN)</strong>
+                      </p>
+                      <ol reversed id="fens">
+                        
+                      </ol>                      
+                  </div>
+              </div>
           </div>
-        </article>
       </div>
-    </div>
 
+      <div class="hero-foot">
+          <div class="container">
+              <div class="tabs is-centered">
+                  <ul>
+                      <li><a>&copy;</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <script>
+      // The following code is based off a toggle menu by @Bradcomp
+      // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
+      (function() {
+          var burger = document.querySelector('.burger');
+          var menu = document.querySelector('#'+burger.dataset.target);
+          burger.addEventListener('click', function() {
+              burger.classList.toggle('is-active');
+              menu.classList.toggle('is-active');
+          });
+      })();
+    </script>
   </body>
 </html>
