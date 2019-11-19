@@ -14,7 +14,7 @@ consumer.subscriptions.create("GameChannel", {
     // Called when there's incoming data on the websocket for this channel
     console.log("Recieving:");
     console.log(data.content);
-    $('#fens').prepend(`<li>${data.content}</li>`);//html(data.content);
+    $('#fens').prepend(`<li><small>${data.content}</small></li>`);//html(data.content);
     var status = data.content;
     board1.position(status);
   }

@@ -1,4 +1,17 @@
-<div id="board1" style="width: 90%;"></div>
+<div class="columns">
+    <div class="column is-5">
+        <div id="board1" style="width: 90%;"></div>
+    </div>
+    <div class="column is-6 is-offset-1">
+        <p class="is-2">
+            <strong>Ιστορικό (FEN)</strong>
+        </p>
+        <ol reversed id="fens">
+        
+        </ol>                      
+    </div>
+</div>
+
 
 <script>
     var board1 = Chessboard('board1', {
