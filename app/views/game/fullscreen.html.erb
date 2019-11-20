@@ -1,4 +1,4 @@
-<div id="transmission_board" style="width: 50%;"></div>
+<div id="transmission_board" style="width: 60%;"></div>
 
 <script>
     var transmission_board = Chessboard('transmission_board', {
@@ -12,6 +12,7 @@
 
 <script>
 var elem = document.getElementById("transmission_board");
+
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -23,5 +24,7 @@ function openFullscreen() {
     elem.msRequestFullscreen();
   }
 };
+//$(window).resize(transmission_board.resize)
 openFullscreen();
+transmission_board.resize;
 </script>
