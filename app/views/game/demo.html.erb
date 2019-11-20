@@ -16,16 +16,6 @@
                     </button>
                 </p>
             </div>
-            <div class="content">
-            <p>Μερικά παραδείγματα FEN:</p>
-            <ol type="A">
-                <li>rnbqkb1r/pp1ppppp/2p2n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1</li>
-                <li>r2qkb1r/pp2pppp/n1p2n2/3p4/4P1b1/3P1N2/PPP1BPPP/RNBQK2R b KQkq - 0 1
-</li>
-                <li>r1bqkbnr/ppp1p1pp/2n2p2/3p4/7P/5N2/PPPPPPP1/RNBQKB1R b KQkq - 0 1
-</li>
-            </ol>
-            </div>
         </p>                       
     </div>
 </div>
@@ -46,5 +36,7 @@
         var fen = $('#fen_string').val();
         //console.log(fen);
         demo_board.position(fen);
-    })
+    });
+
+    $(window).resize(demo_board.resize);
 </script>
