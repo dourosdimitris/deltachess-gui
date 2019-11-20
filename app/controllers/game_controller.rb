@@ -1,7 +1,19 @@
 class GameController < ApplicationController
 	skip_before_action :verify_authenticity_token, :only => [:update]
 
-	def show
+	def home
+
+	end
+
+	def transmission
+
+	end
+
+	def demo
+
+	end
+
+	def help
 
 	end
 
@@ -11,5 +23,9 @@ class GameController < ApplicationController
      		ActionCable.server.broadcast "game_channel", content: status
      		format.json { render json: params[:game] }
     	end
+	end
+
+	def fullscreen
+
 	end
 end

@@ -1,0 +1,50 @@
+<div class="columns">
+    <div class="column is-4">
+        <div id="demo_board" style="width: 100%;"></div>
+    </div>
+    <div class="column is-8">
+        <p>
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" placeholder="Εισαγωγή FEN εδώ..." id="fen_string">
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button class="button is-success" id="submit_button">
+                    Δοκιμή
+                    </button>
+                </p>
+            </div>
+            <div class="content">
+            <p>Μερικά παραδείγματα FEN:</p>
+            <ol type="A">
+                <li>rnbqkb1r/pp1ppppp/2p2n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1</li>
+                <li>r2qkb1r/pp2pppp/n1p2n2/3p4/4P1b1/3P1N2/PPP1BPPP/RNBQK2R b KQkq - 0 1
+</li>
+                <li>r1bqkbnr/ppp1p1pp/2n2p2/3p4/7P/5N2/PPPPPPP1/RNBQKB1R b KQkq - 0 1
+</li>
+            </ol>
+            </div>
+        </p>                       
+    </div>
+</div>
+
+<script>
+    var demo_board = Chessboard('demo_board', {
+        draggable: true,
+        moveSpeed: 'slow',
+        snapbackSpeed: 500,
+        snapSpeed: 100,
+        position: 'start'
+    })
+</script>
+
+<script>
+    $('#submit_button').on('click', function () {
+        //console.log(demo_board);
+        var fen = $('#fen_string').val();
+        //console.log(fen);
+        demo_board.position(fen);
+    })
+</script>

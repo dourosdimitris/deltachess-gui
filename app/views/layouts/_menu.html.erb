@@ -1,0 +1,28 @@
+<div class="hero-head">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/deltachess-logo.png" alt="Logo"><span style="font-family:Pacifico;">&nbsp;DeltaChess</span>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="tabs is-right">
+                        <ul>
+                            <li class="<%='is-active' if params[:action] == 'home'%>"><a href="<%=game_home_path%>">Αρχική</a></li>
+                            <li class="<%='is-active' if params[:action] == 'transmission'%>"><a href="<%=game_transmission_path%>">Μετάδοση</a></li>
+                            <li class="<%='is-active' if params[:action] == 'demo'%>"><a href="<%=game_demo_path%>">Δοκιμή</a></li>
+                            <li class="<%='is-active' if params[:action] == 'help'%>"><a href="<%=game_help_path%>">Βοήθεια</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

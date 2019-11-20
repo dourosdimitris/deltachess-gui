@@ -16,6 +16,6 @@ consumer.subscriptions.create("GameChannel", {
     console.log(data.content);
     $('#fens').prepend(`<li><small>${data.content}</small></li>`);//html(data.content);
     var status = data.content;
-    board1.position(status);
+    transmission_board.position(status);
   }
 });

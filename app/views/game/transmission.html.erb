@@ -1,0 +1,31 @@
+<div class="columns">
+    <div class="column is-4">
+        <div id="transmission_board" style="width: 100%;"></div>
+    </div>
+    <div class="column is-8">
+        <a href="<%=game_fullscreen_path%>">
+            <span class="icon is-small">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </span> 
+            Πλήρης οθόνη
+        </a>
+        <p class="is-2">
+            <strong>Ιστορικό (FEN)</strong>
+        </p>
+        <ol reversed id="fens">
+        
+        </ol>
+    </div>
+</div>
+
+
+<script>
+    var transmission_board = Chessboard('transmission_board', {
+        draggable: true,
+        moveSpeed: 'slow',
+        snapbackSpeed: 500,
+        snapSpeed: 100,
+        position: 'start'
+    })
+</script>
+
